@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" fetchpriority="high" href="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1400&q=82&fm=webp" imagesrcset="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=900&q=82&fm=webp 900w, https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1400&q=82&fm=webp 1400w, https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=2000&q=82&fm=webp 2000w" imagesizes="(max-width:780px) 100vw, 62vw">
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
   <noscript><style>.reveal,.reveal-group>*{opacity:1!important;transform:none!important}</style></noscript>
@@ -38,8 +39,14 @@
 
   <main id="main">
     <section class="hero">
-      <div class="hero-photo" role="img" aria-label="Business professionals meeting in a modern city office"></div>
+      <img class="hero-photo"
+           src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1600&q=90"
+           srcset="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=900&q=82&fm=webp 900w, https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1400&q=82&fm=webp 1400w, https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=2000&q=82&fm=webp 2000w"
+           sizes="(max-width:780px) 100vw, 62vw"
+           width="1600" height="1067" fetchpriority="high" decoding="async"
+           alt="Business professionals meeting in a modern city office">
       <div class="hero-shade"></div>
+      <div class="hero-atmosphere" aria-hidden="true"></div>
       <div class="container hero-inner">
         <div class="hero-copy reveal">
           <p class="eyebrow eyebrow-light">PROFESSIONAL DEBT COLLECTION SERVICES</p>
@@ -49,19 +56,37 @@
             <a class="button button-orange" href="#quote" data-quote-open aria-haspopup="dialog">Get a Free Consultation <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg></a>
             <a class="button button-outline" href="Services/index.html">Our Services</a>
           </div>
+          <p class="hero-trust">No obligation &bull; Reply within 1 business day &bull; NDA on request</p>
           <div class="hero-points">
             <span><b class="line-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-trending-up"></use></svg></b> Recovery-focused workflows</span>
             <span><b class="line-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-map-pin"></use></svg></b> Pan-India service potential</span>
-            <span><b class="line-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-chat"></use></svg></b> Respectful communication</span>
-            <span><b class="line-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-chart"></use></svg></b> Clear reporting</span>
+            <span><b class="line-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-shield-check"></use></svg></b> Respectful, compliant communication</span>
           </div>
         </div>
-        <aside class="hero-card reveal" aria-label="Service highlights">
-          <p class="eyebrow">A BETTER WAY TO COLLECT</p>
-          <div class="hero-card-item"><span class="round-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-eye"></use></svg></span><div><strong>Account visibility</strong><small>Organized follow-ups</small></div></div>
-          <div class="hero-card-item"><span class="round-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-smile"></use></svg></span><div><strong>Customer-first approach</strong><small>Professional communication</small></div></div>
-          <div class="hero-card-item"><span class="round-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-chart"></use></svg></span><div><strong>Actionable reporting</strong><small>Progress you can review</small></div></div>
-          <a href="Technology/index.html" class="text-link">Explore our approach <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg></a>
+        <aside class="hero-card reveal" aria-label="Illustrative collections workspace preview">
+          <div class="hero-card-top">
+            <span class="hero-pill">Collections workspace</span>
+            <span class="hero-live"><i></i>Preview</span>
+          </div>
+          <div class="hero-card-metrics">
+            <div><small>Accounts in view</small><b data-hero-metric data-min="1240" data-max="8420">6,240</b></div>
+            <div><small>Follow-ups</small><b data-hero-metric data-min="320" data-max="2360">1,480</b></div>
+            <div><small>Resolved</small><b data-hero-metric data-min="180" data-max="1640">920</b></div>
+          </div>
+          <div class="hero-spark" aria-hidden="true">
+            <svg viewBox="0 0 320 90" preserveAspectRatio="none" focusable="false" aria-hidden="true">
+              <defs>
+                <linearGradient id="heroSparkFill" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#f49a32" stop-opacity="0.35"/>
+                  <stop offset="100%" stop-color="#f49a32" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <polygon points="0,90 0,74 40,60 78,66 116,38 154,52 192,30 230,44 268,18 306,32 320,22 320,90" fill="url(#heroSparkFill)"/>
+              <polyline points="0,74 40,60 78,66 116,38 154,52 192,30 230,44 268,18 306,32 320,22" fill="none" stroke="#f49a32" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+            </svg>
+          </div>
+          <p class="hero-card-note">Illustrative interface &mdash; reporting can be configured around agreed client KPIs.</p>
+          <a href="Technology/index.html" class="text-link">Explore our platform <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg></a>
         </aside>
       </div>
     </section>
@@ -127,7 +152,7 @@
           <span class="process-arrow" aria-hidden="true"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg></span>
           <article class="process-step"><span class="step-number">05</span><span class="process-icon"><svg class="icon" aria-hidden="true" focusable="false"><use href="#i-chart"></use></svg></span><h3>Reporting</h3><p>Review activity, exceptions and opportunities to improve.</p></article>
         </div>
-        <div style="text-align:center; margin-top:32px;">
+        <div class="section-more">
           <a class="button button-light-outline" href="Approach/index.html">View Our Full Approach <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg></a>
         </div>
       </div>
@@ -147,14 +172,14 @@
     <section class="section industries-section" id="industries">
       <div class="container"><div class="section-heading compact reveal"><div><p class="eyebrow">INDUSTRIES WE SERVE</p><h2>Supporting the Financial Ecosystem</h2><p>Solutions can be tailored to the needs of eligible lenders and financial service providers.</p></div></div>
         <div class="industry-grid reveal-group">
-          <article class="industry-card"><img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=480&q=80" alt="Banking institution" loading="lazy"><strong>Banks</strong></article>
+          <article class="industry-card"><img src="https://images.unsplash.com/photo-1541354329998-f4d9a9f9297f?auto=format&fit=crop&w=480&q=80" alt="Banking branch" loading="lazy"><strong>Banks</strong></article>
           <article class="industry-card"><img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=480&q=80" alt="NBFC office" loading="lazy"><strong>NBFCs</strong></article>
           <article class="industry-card"><img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=480&q=80" alt="Fintech workspace" loading="lazy"><strong>Fintech</strong></article>
           <article class="industry-card"><img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=480&q=80" alt="Microfinance meeting" loading="lazy"><strong>Microfinance</strong></article>
           <article class="industry-card"><img src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=480&q=80" alt="Consumer finance" loading="lazy"><strong>Consumer Finance</strong></article>
-          <article class="industry-card"><img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=480&q=80" alt="Business lending" loading="lazy"><strong>Business Lending</strong></article>
+          <article class="industry-card"><img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=480&q=80" alt="Business lending meeting" loading="lazy"><strong>Business Lending</strong></article>
         </div>
-        <div style="text-align:center; margin-top:28px;">
+        <div class="section-more tight">
           <a class="button button-light-outline" href="Industries/index.html">View All Industries <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg></a>
         </div>
       </div>
@@ -167,12 +192,12 @@
       </div>
     </section>
 
-    <section class="section cta-section reveal" style="background:var(--navy); color:white; text-align:center;">
-      <div class="container" style="max-width:700px;">
+    <section class="section cta-section reveal">
+      <div class="container cta-inner">
         <p class="eyebrow eyebrow-orange">READY TO IMPROVE RECOVERY?</p>
-        <h2 style="font:800 clamp(28px,3.5vw,42px)/1.15 Manrope,sans-serif; letter-spacing:-1.2px; margin:12px 0 20px;">Let's Discuss Your Portfolio</h2>
-        <p style="color:#c4d0dc; font-size:15px; margin-bottom:28px;">Share your collection challenges and we'll propose a structured approach tailored to your needs.</p>
-        <a class="button button-orange" href="#quote" data-quote-open aria-haspopup="dialog" style="font-size:14px; padding:14px 28px;">Request a Quote <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg></a>
+        <h2>Let's Discuss Your Portfolio</h2>
+        <p class="cta-lead">Share your collection challenges and we'll propose a structured approach tailored to your needs.</p>
+        <a class="button button-orange" href="#quote" data-quote-open aria-haspopup="dialog">Request a Quote <svg class="icon" aria-hidden="true" focusable="false"><use href="#i-arrow-right"></use></svg></a>
       </div>
     </section>
   </main>

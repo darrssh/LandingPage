@@ -223,6 +223,18 @@
     ]
   });
 
+  /* ---------- Home hero preview: illustrative sample metrics ----------
+     The hero card shows a small "Collections workspace" preview. These
+     figures are generated randomly on each load purely to demonstrate the
+     interface — they are not real performance data and are labelled as
+     illustrative in the UI. Ranges are set per tile via data-min/data-max. */
+  document.querySelectorAll('[data-hero-metric]').forEach(el => {
+    const min = Number(el.dataset.min) || 100;
+    const max = Number(el.dataset.max) || 9999;
+    const value = Math.floor(Math.random() * (max - min + 1)) + min;
+    el.textContent = value.toLocaleString('en-US');
+  });
+
   function initReveals() {
     const els = document.querySelectorAll('.reveal,.reveal-group');
     if (els.length === 0) return;
